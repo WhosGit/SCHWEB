@@ -3,7 +3,8 @@ import { Container, Typography, Grid, Box, Link, Paper } from '@mui/material';
 const teamMembers = [
   {
     name: "Xu Wang",
-    role: "Assistant Professor",
+    role: "Principal Investigator",
+    title: "Assistant Professor",
     department: "Computer Science and Engineering",
     institution: "University of Michigan",
     expertise: "Human-Computer Interaction, Augmented Reality, Computer Vision",
@@ -14,18 +15,32 @@ const teamMembers = [
   },
   {
     name: "Anhong Guo",
-    role: "Assistant Professor", 
+    role: "Co-Principal Investigator",
+    title: "Assistant Professor", 
     department: "Computer Science and Engineering",
     institution: "University of Michigan",
     expertise: "Human-Computer Interaction, Accessibility, Mobile Computing",
     bio: "Dr. Anhong Guo is an Assistant Professor in Computer Science and Engineering at the University of Michigan. His research centers on making computing more accessible and developing innovative interaction techniques for diverse user populations.",
     homepage: "https://guoanhong.com/",
     photo: "/fig/anhongguo.png",
-    category: "Principal Investigator"
+    category: "Co-Principal Investigator"
+  },
+  {
+    name: "Vitaliy Popov",
+    role: "Co-Principal Investigator",
+    title: "Clinical Professor",
+    department: "Michigan Medicine",
+    institution: "University of Michigan",
+    expertise: "Surgery, Medical Education, Clinical Training",
+    bio: "Dr. Vitaliy Popov is a Clinical Professor at Michigan Medicine, University of Michigan. He brings extensive clinical expertise to the research team, focusing on surgical education and training methodologies.",
+    homepage: "https://www.vitaliypopov.com/",
+    photo: "/fig/VitaliyPopov.png",
+    category: "Co-Principal Investigator"
   },
   {
     name: "Jingying Wang",
-    role: "PhD Student Researcher",
+    role: "PhD Student",
+    title: "Graduate Student Researcher",
     department: "Computer Science and Engineering",
     institution: "University of Michigan",
     expertise: "Computer Vision, Machine Learning, Surgical Training Tools",
@@ -33,17 +48,6 @@ const teamMembers = [
     homepage: "https://wjymonica.github.io/jingyingwang.github.io/",
     photo: "/fig/jingyingwang.png",
     category: "Graduate Student"
-  },
-  {
-    name: "Vitaliy Popov",
-    role: "Clinical Professor",
-    department: "Michigan Medicine",
-    institution: "University of Michigan",
-    expertise: "Surgery, Medical Education, Clinical Training",
-    bio: "Dr. Vitaliy Popov is a Clinical Professor at Michigan Medicine, University of Michigan. He brings extensive clinical expertise to the research team, focusing on surgical education and training methodologies.",
-    homepage: "https://www.vitaliypopov.com/",
-    photo: "/fig/VitaliyPopov.png",
-    category: "Clinical Collaborator"
   }
 ];
 
@@ -103,8 +107,11 @@ const PersonCard = ({ member }) => (
     </Link>
 
     {/* Role and Department */}
-    <Typography variant="h6" color="text.primary" gutterBottom>
+    <Typography variant="h6" color="primary.main" gutterBottom sx={{ fontWeight: 'bold' }}>
       {member.role}
+    </Typography>
+    <Typography variant="body1" color="text.primary" gutterBottom>
+      {member.title}
     </Typography>
     <Typography variant="body1" color="text.secondary" gutterBottom>
       {member.department}
@@ -136,8 +143,8 @@ const PersonCard = ({ member }) => (
 );
 
 const Team = () => {
-  const principalInvestigators = teamMembers.filter(member => member.category === "Principal Investigator");
-  const clinicalCollaborators = teamMembers.filter(member => member.category === "Clinical Collaborator");
+  const principalInvestigator = teamMembers.filter(member => member.category === "Principal Investigator");
+  const coPrincipalInvestigators = teamMembers.filter(member => member.category === "Co-Principal Investigator");
   const graduateStudents = teamMembers.filter(member => member.category === "Graduate Student");
 
   return (
@@ -153,7 +160,7 @@ const Team = () => {
         </Typography>
       </Box>
 
-      {/* Principal Investigators */}
+      {/* Principal Investigator */}
       <Box sx={{ mb: 8 }}>
         <Typography 
           variant="h4" 
@@ -166,10 +173,10 @@ const Team = () => {
             textAlign: 'center'
           }}
         >
-          Principal Investigators
+          Principal Investigator
         </Typography>
         <Grid container spacing={6} justifyContent="center">
-          {principalInvestigators.map((member, index) => (
+          {principalInvestigator.map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <PersonCard member={member} />
             </Grid>
@@ -177,7 +184,7 @@ const Team = () => {
         </Grid>
       </Box>
 
-      {/* Clinical Collaborators */}
+      {/* Co-Principal Investigators */}
       <Box sx={{ mb: 8 }}>
         <Typography 
           variant="h4" 
@@ -190,10 +197,10 @@ const Team = () => {
             textAlign: 'center'
           }}
         >
-          Clinical Collaborators
+          Co-Principal Investigators
         </Typography>
         <Grid container spacing={6} justifyContent="center">
-          {clinicalCollaborators.map((member, index) => (
+          {coPrincipalInvestigators.map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <PersonCard member={member} />
             </Grid>

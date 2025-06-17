@@ -20,12 +20,12 @@ const items = [
     link: "/news",
     icon: "📰"
   },
-  { 
-    title: "Collaborate with Us", 
-    desc: "Join our mission to transform surgical training and improve patient safety through innovative technology.", 
-    link: "/contact",
-    icon: "🤝"
-  },
+  // { 
+  //   title: "Collaborate with Us", 
+  //   desc: "Join our mission to transform surgical training and improve patient safety through innovative technology.", 
+  //   link: "/contact",
+  //   icon: "🤝"
+  // },
 ];
 
 const CardSection = () => (

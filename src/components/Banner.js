@@ -15,15 +15,15 @@ const Banner = () => (
     <Container maxWidth="lg">
       <Box sx={{ textAlign: 'center', color: 'white' }}>
         <Typography variant="h2" component="h1" fontWeight="bold" mb={3}>
-          Surgical Computing & Healthcare Research Institute
+          Multimodal Surgical Training Research
         </Typography>
         <Typography variant="h5" component="h2" mb={4} sx={{ opacity: 0.9 }}>
-          Advancing Surgical Training Through Computational Innovation
+          Enhancing Intra- and Post-operative Learning Between Attending and Resident Surgeons
         </Typography>
-        <Typography variant="h6" component="p" sx={{ maxWidth: '800px', margin: '0 auto', opacity: 0.8 }}>
-          We leverage advanced computational methods including eye-tracking, multimodal analysis, 
-          and AI to enhance surgical training and improve patient outcomes through innovative 
-          educational technologies.
+        <Typography variant="h6" component="p" sx={{ maxWidth: '900px', margin: '0 auto', opacity: 0.8 }}>
+          NSF-funded research developing computational methods to model surgeon behaviors, 
+          improve surgical training outcomes, and enhance coordination in the operating room 
+          through multimodal analysis of gaze, conversation, and procedural data.
         </Typography>
       </Box>
     </Container>

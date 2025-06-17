@@ -5,10 +5,10 @@ const contactInfo = [
     icon: "📍",
     title: "Mailing Address",
     details: [
-      "Surgical Training Research Lab",
-      "Computer Science & Engineering", 
-      "University of Michigan",
-      "2260 Hayward Street, Ann Arbor, MI 48109",
+      "Computer Science and Engineering",
+      "University of Michigan - Ann Arbor", 
+      "Bob and Betty Beyster Building",
+      "2260 Hayward Street, Ann Arbor, MI 48109-2121",
       "United States"
     ]
   },
@@ -16,8 +16,8 @@ const contactInfo = [
     icon: "📞",
     title: "Phone & Fax",
     details: [
-      "Lab Office: +1 (734) 764-8000",
-      "Research Coordinator: +1 (734) 764-8001", 
+      "Primary: +1 (734) 763-2285",
+      "Department Main: +1 (734) 764-8000", 
       "Fax: +1 (734) 763-1260"
     ]
   },
@@ -25,10 +25,9 @@ const contactInfo = [
     icon: "✉️",
     title: "Email Contacts",
     details: [
-      "General Inquiries: surgical-training@umich.edu",
-      "Research Collaboration: xuwanghci@umich.edu",
-      "Media Relations: engin-comm@umich.edu",
-      "Student Programs: surgical-training-students@umich.edu"
+      "Principal Investigator: xwanghci@umich.edu",
+      "General Inquiries: info-cse@umich.edu",
+      "Media Relations: engin-comm@umich.edu"
     ]
   },
   {

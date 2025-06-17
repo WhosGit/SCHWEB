@@ -84,10 +84,10 @@ const Project = () => (
   <Container maxWidth="lg" sx={{ py: 6 }}>
     <Box sx={{ textAlign: 'center', mb: 6 }}>
       <Typography variant="h3" component="h1" gutterBottom>
-        Our Research
+        Our Research Project
       </Typography>
       <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '900px', margin: '0 auto' }}>
-        Developing computational methods to enhance surgical training 
+        NSF-funded research developing computational methods to enhance surgical training 
         and improve patient outcomes through multimodal behavioral analysis.
       </Typography>
     </Box>
@@ -98,26 +98,35 @@ const Project = () => (
         {projectOverview.title}
       </Typography>
       
-      <Typography variant="body1" sx={{ lineHeight: 1.7, mb: 3 }}>
+      <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid item xs={12} md={3}>
+          <Typography variant="subtitle2" color="text.secondary">Award Number</Typography>
+          <Link 
+            href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2406218&HistoricalAwards=false"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ textDecoration: 'none', color: 'primary.main', fontWeight: 'bold' }}
+          >
+            {projectOverview.awardNumber}
+          </Link>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Typography variant="subtitle2" color="text.secondary">Funding</Typography>
+          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{projectOverview.funding}</Typography>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Typography variant="subtitle2" color="text.secondary">Duration</Typography>
+          <Typography variant="body2">{projectOverview.duration}</Typography>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Typography variant="subtitle2" color="text.secondary">Program</Typography>
+          <Typography variant="body2">{projectOverview.program}</Typography>
+        </Grid>
+      </Grid>
+      
+      <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
         {projectOverview.description}
       </Typography>
-
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
-        <Typography variant="body2" color="text.secondary">
-          Supported by: 
-        </Typography>
-        <Link 
-          href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2406218&HistoricalAwards=false"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{ textDecoration: 'none', color: 'primary.main' }}
-        >
-          {projectOverview.awardNumber}
-        </Link>
-        <Typography variant="body2" color="text.secondary">
-          • {projectOverview.program} • {projectOverview.duration}
-        </Typography>
-      </Box>
     </Paper>
 
     {/* Research Thrusts */}
@@ -247,14 +256,24 @@ const Project = () => (
       borderColor: 'grey.200'
     }}>
       <Typography variant="h5" gutterBottom color="primary.main">
-        Research Collaboration
+        Learn More About Our Research
       </Typography>
       <Typography variant="body1" paragraph>
-        We welcome collaborations with clinicians, researchers, and institutions interested 
-        in computational surgery, surgical education, and AI applications in healthcare.
+        Interested in collaborating or learning more about our computational surgery research? 
+        Contact our team to discuss potential partnerships and opportunities.
       </Typography>
-      <Button variant="contained" color="primary" size="large">
+      <Button variant="contained" color="primary" size="large" sx={{ mr: 2 }}>
         Contact Research Team
+      </Button>
+      <Button 
+        variant="outlined" 
+        color="primary" 
+        size="large"
+        component={Link}
+        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2406218&HistoricalAwards=false"
+        target="_blank"
+      >
+        View NSF Award Details
       </Button>
     </Box>
   </Container>

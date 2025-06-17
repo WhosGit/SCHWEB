@@ -6,17 +6,18 @@ const Footer = () => (
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <Typography variant="h6" gutterBottom>
-            SCH Research Institute
+            Surgical Training Research Lab
           </Typography>
           <Typography variant="body2" sx={{ mb: 2 }}>
-            School of Computer Science<br />
-            University Campus<br />
-            Building 123, Room 456<br />
-            City, State 12345
+            Computer Science and Engineering<br />
+            University of Michigan - Ann Arbor<br />
+            Bob and Betty Beyster Building<br />
+            2260 Hayward Street<br />
+            Ann Arbor, MI 48109-2121
           </Typography>
           <Typography variant="body2">
-            Email: contact@sch-institute.edu<br />
-            Phone: +1 (555) 123-4567
+            Email: xwanghci@umich.edu<br />
+            Phone: +1 (734) 763-2285
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
