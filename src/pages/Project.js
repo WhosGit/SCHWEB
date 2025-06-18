@@ -197,6 +197,65 @@ const Project = () => (
       </Paper>
     </Box>
 
+    {/* Publications */}
+    <Box sx={{ mb: 6 }}>
+      <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
+        Key Publications
+      </Typography>
+      <Grid container spacing={4}>
+        <Grid item xs={12}>
+          <Paper sx={{ p: 4, mb: 3, borderLeft: '4px solid', borderLeftColor: 'primary.main' }}>
+            <Typography variant="h6" gutterBottom color="primary.main" sx={{ fontWeight: 'bold' }}>
+              Looking Together ≠ Seeing the Same Thing: Understanding Surgeons' Visual Needs During Intra-operative Coordination and Instruction
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              This research explores how surgeons' visual attention patterns differ during collaborative surgical procedures, 
+              providing insights into effective coordination strategies and instruction delivery in the operating room.
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <Chip label="Eye-tracking" size="small" variant="outlined" />
+              <Chip label="Surgical Coordination" size="small" variant="outlined" />
+              <Chip label="Visual Analysis" size="small" variant="outlined" />
+            </Box>
+          </Paper>
+        </Grid>
+        
+        <Grid item xs={12}>
+          <Paper sx={{ p: 4, mb: 3, borderLeft: '4px solid', borderLeftColor: 'secondary.main' }}>
+            <Typography variant="h6" gutterBottom color="secondary.main" sx={{ fontWeight: 'bold' }}>
+              Surgment: Segmentation-enabled Semantic Search and Creation of Visual Question and Feedback to Support Video-Based Surgery Learning
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              A novel system that combines computer vision segmentation with semantic search capabilities to enhance 
+              surgical education through intelligent video analysis and automated feedback generation.
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <Chip label="Computer Vision" size="small" variant="outlined" />
+              <Chip label="Semantic Search" size="small" variant="outlined" />
+              <Chip label="Surgical Education" size="small" variant="outlined" />
+            </Box>
+          </Paper>
+        </Grid>
+        
+        <Grid item xs={12}>
+          <Paper sx={{ p: 4, mb: 3, borderLeft: '4px solid', borderLeftColor: 'success.main' }}>
+            <Typography variant="h6" gutterBottom color="success.main" sx={{ fontWeight: 'bold' }}>
+              eXplainMR: Generating Real-time Textual and Visual eXplanations to Facilitate UltraSonography Learning in MR
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              An innovative mixed reality system that provides real-time textual and visual explanations to support 
+              ultrasound learning, bridging the gap between traditional training methods and modern technology.
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <Chip label="Mixed Reality" size="small" variant="outlined" />
+              <Chip label="Medical Training" size="small" variant="outlined" />
+              <Chip label="Ultrasound" size="small" variant="outlined" />
+            </Box>
+          </Paper>
+        </Grid>
+      </Grid>
+    </Box>
+
     {/* Project Impact */}
     <Box sx={{ mb: 6 }}>
       <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>

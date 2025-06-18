@@ -48,6 +48,18 @@ const teamMembers = [
     homepage: "https://wjymonica.github.io/jingyingwang.github.io/",
     photo: "/fig/jingyingwang.png",
     category: "Graduate Student"
+  },
+  {
+    name: "Rosiana Natalie",
+    role: "MIDAS Postdoctoral Fellow",
+    title: "Postdoctoral Research Fellow",
+    department: "Computer Science and Engineering",
+    institution: "University of Michigan",
+    expertise: "Accessibility, Computer Vision, Audio Description, Mixed-Ability Collaboration",
+    bio: "Dr. Rosiana Natalie is a MIDAS Data Science Postdoctoral Fellow at the University of Michigan, working with Anhong Guo. Her research focuses on creating methods and tools to make video content more accessible for people with visual impairments through mixed-ability collaboration, computer vision, and natural language processing.",
+    homepage: "https://www.rosiananatalie.com/",
+    photo: "/fig/rosiananatalie.png",
+    category: "Graduate Student"
   }
 ];
 
