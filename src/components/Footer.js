@@ -34,7 +34,7 @@ const Footer = () => (
       </Grid>
       <Box sx={{ borderTop: '1px solid #424242', mt: 4, pt: 3, textAlign: 'center' }}>
         <Typography variant="body2" color="grey.400">
-          © 2025 SCH | All Rights Reserved | 
+          © 2025 SCH-umich | All Rights Reserved | 
           <Link href="#" color="inherit" underline="hover" sx={{ ml: 1 }}>Privacy Policy</Link> | 
           <Link href="#" color="inherit" underline="hover" sx={{ ml: 1 }}>Terms of Use</Link>
         </Typography>
