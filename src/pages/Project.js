@@ -63,23 +63,6 @@ const researchThrusts = [
   }
 ];
 
-const technologies = [
-  "Eye-tracking Technology",
-  "Computer Vision",
-  "Neural Networks", 
-  "Scene Segmentation",
-  "Multimodal AI",
-  "Augmented Reality",
-  "Natural Language Processing",
-  "Behavioral Analytics"
-];
-
-const impact = {
-  clinicalImpact: "Reducing surgical errors and improving patient safety through better surgeon training",
-  educationalImpact: "Transforming surgical education with data-driven insights and interactive technologies", 
-  researchImpact: "Advancing the field of computational surgery and medical AI applications"
-};
-
 const Project = () => (
   <Container maxWidth="lg" sx={{ py: 6 }}>
     <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -177,144 +160,128 @@ const Project = () => (
       </Grid>
     </Box>
 
-    {/* Technologies */}
-    <Box sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
-        Key Technologies
-      </Typography>
-      <Paper sx={{ p: 3 }}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          {technologies.map((tech, index) => (
-            <Chip 
-              key={index} 
-              label={tech} 
-              variant="outlined" 
-              color="primary"
-              sx={{ mb: 1 }}
-            />
-          ))}
-        </Box>
-      </Paper>
-    </Box>
-
     {/* Publications */}
     <Box sx={{ mb: 6 }}>
       <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
         Key Publications
       </Typography>
       <Grid container spacing={4}>
+        {/* Paper 1 - CHI 2025 (Most Recent) */}
         <Grid item xs={12}>
-          <Paper sx={{ p: 4, mb: 3, borderLeft: '4px solid', borderLeftColor: 'primary.main' }}>
-            <Typography variant="h6" gutterBottom color="primary.main" sx={{ fontWeight: 'bold' }}>
-              Looking Together ≠ Seeing the Same Thing: Understanding Surgeons' Visual Needs During Intra-operative Coordination and Instruction
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              This research explores how surgeons' visual attention patterns differ during collaborative surgical procedures, 
-              providing insights into effective coordination strategies and instruction delivery in the operating room.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-              <Chip label="Eye-tracking" size="small" variant="outlined" />
-              <Chip label="Surgical Coordination" size="small" variant="outlined" />
-              <Chip label="Visual Analysis" size="small" variant="outlined" />
+          <Box sx={{ p: 3, mb: 4 }}>
+            <Box sx={{ display: 'flex', gap: 4, alignItems: 'flex-start' }}>
+              <Box sx={{ flexShrink: 0 }}>
+                <img
+                  src="/paperfig/paper1.png"
+                  alt="eXplainMR paper figure"
+                  style={{
+                    width: '280px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px'
+                  }}
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main', lineHeight: 1.3 }}>
+                  eXplainMR: Generating Real-time Textual and Visual eXplanations to Facilitate UltraSonography Learning in MR
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+                  <strong>Authors:</strong> Jingying Wang, Jingjing Zhang, Juana Nicoll Capizzano, Matthew Sigakis, Xu Wang, Vitaliy Popov
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+                  <strong>Conference:</strong> CHI 2025
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                  <Link href="https://arxiv.org/abs/2502.18640" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outlined" size="medium">Paper</Button>
+                  </Link>
+                </Box>
+              </Box>
             </Box>
-          </Paper>
+          </Box>
         </Grid>
         
+        {/* Paper 2 - CHI 2024 Best Paper */}
         <Grid item xs={12}>
-          <Paper sx={{ p: 4, mb: 3, borderLeft: '4px solid', borderLeftColor: 'secondary.main' }}>
-            <Typography variant="h6" gutterBottom color="secondary.main" sx={{ fontWeight: 'bold' }}>
-              Surgment: Segmentation-enabled Semantic Search and Creation of Visual Question and Feedback to Support Video-Based Surgery Learning
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              A novel system that combines computer vision segmentation with semantic search capabilities to enhance 
-              surgical education through intelligent video analysis and automated feedback generation.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-              <Chip label="Computer Vision" size="small" variant="outlined" />
-              <Chip label="Semantic Search" size="small" variant="outlined" />
-              <Chip label="Surgical Education" size="small" variant="outlined" />
+          <Box sx={{ p: 3, mb: 4 }}>
+            <Box sx={{ display: 'flex', gap: 4, alignItems: 'flex-start' }}>
+              <Box sx={{ flexShrink: 0 }}>
+                <img
+                  src="/paperfig/paper2.png"
+                  alt="Looking Together paper figure"
+                  style={{
+                    width: '280px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px'
+                  }}
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main', lineHeight: 1.3 }}>
+                  Looking Together ≠ Seeing the Same Thing: Understanding Surgeons' Visual Needs During Intra-operative Coordination and Instruction
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+                  <strong>Authors:</strong> Xinyue Chen*, Vitaliy Popov*, Jingying Wang, Michael Kemp, Gurjit Sandhu, Taylor Kantor, Natalie Mateju, Xu Wang (* indicates equal contribution)
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3 }}>
+                  <strong>Conference:</strong> CHI 2024 
+                  <Chip 
+                    label="🏆 Best Paper Honorable Mention" 
+                    size="small" 
+                    sx={{ ml: 1, backgroundColor: '#FFD700', color: '#B8860B', fontWeight: 'bold' }}
+                  />
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                  <Link href="https://dl.acm.org/doi/10.1145/3613904.3641929" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outlined" size="medium">Paper</Button>
+                  </Link>
+                </Box>
+              </Box>
             </Box>
-          </Paper>
+          </Box>
         </Grid>
         
+        {/* Paper 3 - CHI 2024 Surgment */}
         <Grid item xs={12}>
-          <Paper sx={{ p: 4, mb: 3, borderLeft: '4px solid', borderLeftColor: 'success.main' }}>
-            <Typography variant="h6" gutterBottom color="success.main" sx={{ fontWeight: 'bold' }}>
-              eXplainMR: Generating Real-time Textual and Visual eXplanations to Facilitate UltraSonography Learning in MR
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              An innovative mixed reality system that provides real-time textual and visual explanations to support 
-              ultrasound learning, bridging the gap between traditional training methods and modern technology.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-              <Chip label="Mixed Reality" size="small" variant="outlined" />
-              <Chip label="Medical Training" size="small" variant="outlined" />
-              <Chip label="Ultrasound" size="small" variant="outlined" />
+          <Box sx={{ p: 3, mb: 4 }}>
+            <Box sx={{ display: 'flex', gap: 4, alignItems: 'flex-start' }}>
+              <Box sx={{ flexShrink: 0 }}>
+                <img
+                  src="/paperfig/paper3.png"
+                  alt="Surgment paper figure"
+                  style={{
+                    width: '280px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px'
+                  }}
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main', lineHeight: 1.3 }}>
+                  Surgment: Segmentation-enabled Semantic Search and Creation of Visual Question and Feedback to Support Video-Based Surgery Learning
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+                  <strong>Authors:</strong> Jingying Wang, Haoran Tang, Taylor Kantor, Tandis Soltani, Vitaliy Popov, Xu Wang
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+                  <strong>Conference:</strong> CHI 2024
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                  <Link href="https://dl.acm.org/doi/10.1145/3613904.3642587" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outlined" size="medium">Paper</Button>
+                  </Link>
+                  <Link href="https://www.youtube.com/watch?v=y85dfZWyhkg" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outlined" size="medium" color="secondary">Video</Button>
+                  </Link>
+                </Box>
+              </Box>
             </Box>
-          </Paper>
+          </Box>
         </Grid>
       </Grid>
-    </Box>
-
-    {/* Project Impact */}
-    <Box sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
-        Project Impact
-      </Typography>
-      <Grid container spacing={4}>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 3, height: '100%', backgroundColor: '#e3f2fd' }}>
-            <Typography variant="h6" gutterBottom color="primary.main">
-              Clinical Impact
-            </Typography>
-            <Typography variant="body2">
-              {impact.clinicalImpact}
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 3, height: '100%', backgroundColor: '#f3e5f5' }}>
-            <Typography variant="h6" gutterBottom color="secondary.main">
-              Educational Impact
-            </Typography>
-            <Typography variant="body2">
-              {impact.educationalImpact}
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 3, height: '100%', backgroundColor: '#e8f5e8' }}>
-            <Typography variant="h6" gutterBottom color="success.main">
-              Research Impact
-            </Typography>
-            <Typography variant="body2">
-              {impact.researchImpact}
-            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Box>
-
-    {/* Call to Action */}
-    <Box sx={{ 
-      textAlign: 'center', 
-      mt: 8, 
-      p: 4, 
-      backgroundColor: 'grey.50', 
-      borderRadius: 2,
-      border: '1px solid',
-      borderColor: 'grey.200'
-    }}>
-      <Typography variant="h5" gutterBottom color="primary.main">
-        Research Collaboration
-      </Typography>
-      <Typography variant="body1" paragraph>
-        We welcome collaborations with clinicians, researchers, and institutions interested 
-        in computational surgery, surgical education, and AI applications in healthcare.
-      </Typography>
-      <Button variant="contained" color="primary" size="large">
-        Contact Research Team
-      </Button>
     </Box>
   </Container>
 );

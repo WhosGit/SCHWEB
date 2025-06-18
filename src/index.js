@@ -15,7 +15,6 @@ import Home from './pages/Home';
 import Team from './pages/Team';
 import Project from './pages/Project';
 import News from './pages/News';
-import Contact from './pages/Contact';
 
 // 创建Material-UI主题
 const theme = createTheme({
@@ -42,7 +41,6 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/project" element={<Project />} />
             <Route path="/news" element={<News />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

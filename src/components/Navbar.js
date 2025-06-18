@@ -11,7 +11,7 @@ const Navbar = () => (
           fontWeight: 'bold',
           '&:hover': { opacity: 0.8 }
         }}>
-          SCH Research Institute
+          SCH
         </Typography>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <Button color="inherit" component={Link} to="/" sx={{ textTransform: 'none' }}>
@@ -25,9 +25,6 @@ const Navbar = () => (
           </Button>
           <Button color="inherit" component={Link} to="/news" sx={{ textTransform: 'none' }}>
             Our News
-          </Button>
-          <Button color="inherit" component={Link} to="/contact" sx={{ textTransform: 'none' }}>
-            Contact
           </Button>
         </Box>
       </Toolbar>

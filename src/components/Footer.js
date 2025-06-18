@@ -29,13 +29,12 @@ const Footer = () => (
             <Link href="/team" color="inherit" underline="hover">Our People</Link>
             <Link href="/project" color="inherit" underline="hover">Our Research</Link>
             <Link href="/news" color="inherit" underline="hover">Our News</Link>
-            <Link href="/contact" color="inherit" underline="hover">Contact</Link>
           </Box>
         </Grid>
       </Grid>
       <Box sx={{ borderTop: '1px solid #424242', mt: 4, pt: 3, textAlign: 'center' }}>
         <Typography variant="body2" color="grey.400">
-          © 2025 SCH Research Institute | All Rights Reserved | 
+          © 2025 SCH | All Rights Reserved | 
           <Link href="#" color="inherit" underline="hover" sx={{ ml: 1 }}>Privacy Policy</Link> | 
           <Link href="#" color="inherit" underline="hover" sx={{ ml: 1 }}>Terms of Use</Link>
         </Typography>

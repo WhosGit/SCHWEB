@@ -1,4 +1,4 @@
-import { Container, Typography, Card, CardContent, Chip, Box, Button, Link } from '@mui/material';
+import { Container, Typography, Card, CardContent, Chip, Box, Link } from '@mui/material';
 
 const newsItems = [
   {
@@ -13,14 +13,14 @@ const newsItems = [
     date: "May 15, 2024",
     content: "Our research on evaluating surgeons' visual needs during surgery received a Best Paper Honorable Mention Award at CHI 2024, highlighting the importance of our work in understanding human factors in surgical environments.",
     category: "Recognition",
-    link: null
+    link: "https://cse.engin.umich.edu/stories/11-papers-by-cse-researchers-presented-at-chi-2024"
   },
   {
     title: "Surgment: Video-based Surgical Training Tool Presented at CHI 2024",
     date: "May 12, 2024",
     content: "PhD student Jingying Wang presented Surgment, our innovative video-based surgical training tool that automatically interprets and annotates surgery scenes to enhance learning experiences for resident surgeons.",
     category: "Research",
-    link: null
+    link: "https://cse.engin.umich.edu/stories/leveraging-ai-to-improve-video-based-surgical-learning"
   }
 ];
 
@@ -48,68 +48,43 @@ const News = () => (
     {/* News List */}
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       {newsItems.map((item, index) => (
-        <Card key={index} sx={{
-          transition: 'transform 0.2s, box-shadow 0.2s',
-          '&:hover': {
-            transform: 'translateX(4px)',
-            boxShadow: 3
-          }
-        }}>
+        <Card 
+          key={index} 
+          component={Link}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            textDecoration: 'none',
+            color: 'inherit',
+            cursor: 'pointer',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+            '&:hover': {
+              transform: 'translateY(-4px)',
+              boxShadow: 6
+            }
+          }}
+        >
           <CardContent sx={{ p: 4 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
-              <Box sx={{ flexGrow: 1 }}>
-                <Typography variant="h5" component="h3" gutterBottom color="primary.main">
-                  {item.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.7 }}>
-                  {item.content}
-                </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 3 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    <Chip 
-                      label={item.category} 
-                      color={getCategoryColor(item.category)} 
-                      size="small" 
-                    />
-                    <Typography variant="body2" color="text.secondary">
-                      {item.date}
-                    </Typography>
-                  </Box>
-                  {item.link && (
-                    <Button 
-                      variant="outlined" 
-                      color="primary" 
-                      size="small"
-                      component={Link}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Details
-                    </Button>
-                  )}
-                </Box>
-              </Box>
+            <Typography variant="h5" component="h3" gutterBottom color="primary.main">
+              {item.title}
+            </Typography>
+            <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.7 }}>
+              {item.content}
+            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 2 }}>
+              <Chip 
+                label={item.category} 
+                color={getCategoryColor(item.category)} 
+                size="small" 
+              />
+              <Typography variant="body2" color="text.secondary">
+                {item.date}
+              </Typography>
             </Box>
           </CardContent>
         </Card>
       ))}
-    </Box>
-
-    {/* Contact for More Information */}
-    <Box sx={{ 
-      textAlign: 'center', 
-      mt: 6, 
-      p: 4, 
-      backgroundColor: 'grey.50', 
-      borderRadius: 2 
-    }}>
-      <Typography variant="h5" gutterBottom color="primary.main">
-        Stay Updated
-      </Typography>
-      <Typography variant="body1" color="text.secondary">
-        Follow our research progress and latest publications by visiting our team members' websites.
-      </Typography>
     </Box>
   </Container>
 );

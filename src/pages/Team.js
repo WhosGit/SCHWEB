@@ -5,10 +5,10 @@ const teamMembers = [
     name: "Xu Wang",
     role: "Principal Investigator",
     title: "Assistant Professor",
-    department: "Computer Science and Engineering",
+    department: "Computer Science and Engineering, School of Information (By courtesy)",
     institution: "University of Michigan",
-    expertise: "Human-Computer Interaction, Augmented Reality, Computer Vision",
-    bio: "Dr. Xu Wang is an Assistant Professor in Computer Science and Engineering at the University of Michigan. His research focuses on human-computer interaction, with particular interests in augmented reality applications for surgical training and computer vision systems.",
+    expertise: "Human-AI Collaboration, Educational Technology, Augmented Reality, Human-Computer Interaction",
+    bio: "Dr. Xu Wang is an Assistant Professor in Computer Science and Engineering and the School of Information (By courtesy) at the University of Michigan. She develops and advances human-AI collaborative techniques to support education, empowering instructors and educators to create effective learning experiences more easily. Her research also explores ways to help people be more attentive to each other's ideas during collaboration and develops Augmented Reality-based systems to support physical task learning in medical contexts. She leads the Lifelong Learning Lab.",
     homepage: "https://web.eecs.umich.edu/~xwanghci/",
     photo: "/fig/xuwang.png",
     category: "Principal Investigator"
@@ -28,11 +28,11 @@ const teamMembers = [
   {
     name: "Vitaliy Popov",
     role: "Co-Principal Investigator",
-    title: "Clinical Professor",
-    department: "Michigan Medicine",
+    title: "Assistant Professor",
+    department: "Learning Health Sciences, School of Information (By courtesy)",
     institution: "University of Michigan",
-    expertise: "Surgery, Medical Education, Clinical Training",
-    bio: "Dr. Vitaliy Popov is a Clinical Professor at Michigan Medicine, University of Michigan. He brings extensive clinical expertise to the research team, focusing on surgical education and training methodologies.",
+    expertise: "Learning Sciences, Team Science, Learning Analytics, Extended Reality",
+    bio: "Dr. Vitaliy Popov is an Assistant Professor in the Department of Learning Health Sciences with a courtesy appointment at the U-M School of Information. He is also the Director of Learning Sciences and Technology for the Clinical Simulation Center. His research focuses on understanding how team function can be optimized to lead to better learning gains, performance and healthcare outcomes, utilizing evidence in education science, simulation-based training and learning analytics.",
     homepage: "https://www.vitaliypopov.com/",
     photo: "/fig/VitaliyPopov.png",
     category: "Co-Principal Investigator"
@@ -213,7 +213,7 @@ const Team = () => {
         </Typography>
         <Grid container spacing={6} justifyContent="center">
           {coPrincipalInvestigators.map((member, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={6} key={index}>
               <PersonCard member={member} />
             </Grid>
           ))}
@@ -242,26 +242,6 @@ const Team = () => {
             </Grid>
           ))}
         </Grid>
-      </Box>
-
-      {/* Project Information */}
-      <Box sx={{ 
-        textAlign: 'center', 
-        mt: 10, 
-        p: 6, 
-        backgroundColor: 'primary.light', 
-        borderRadius: 3,
-        color: 'white'
-      }}>
-        <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
-          NSF Grant Information
-        </Typography>
-        <Typography variant="h6" paragraph sx={{ opacity: 0.9 }}>
-          This research is supported by a $1.2 million grant from the National Science Foundation
-        </Typography>
-        <Typography variant="body1" sx={{ opacity: 0.8, fontStyle: 'italic' }}>
-          "Multimodal Techniques to Enhance Intra- and Post-operative Learning and Coordination between Attending and Resident Surgeons"
-        </Typography>
       </Box>
     </Container>
   );
