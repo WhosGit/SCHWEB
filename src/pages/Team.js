@@ -17,10 +17,10 @@ const teamMembers = [
     name: "Anhong Guo",
     role: "Co-Principal Investigator",
     title: "Assistant Professor", 
-    department: "Computer Science and Engineering",
+    department: "Computer Science and Engineering, School of Information (affiliated)",
     institution: "University of Michigan",
     expertise: "Human-Computer Interaction, Accessibility, Mobile Computing",
-    bio: "Dr. Anhong Guo is an Assistant Professor in Computer Science and Engineering at the University of Michigan. His research centers on making computing more accessible and developing innovative interaction techniques for diverse user populations.",
+    bio: "Dr. Anhong Guo is an Assistant Professor in Computer Science and Engineering at the University of Michigan, also affiliated with the School of Information. His research is at the intersection of HCI and AI, leveraging the synergy between human and machine intelligence to create interactive systems for accessibility, collaboration, and beyond. His work has received best paper and honorable mention awards at top-tier conferences including CHI, UIST, ASSETS, and MobileHCI. He is a recipient of the NSF CAREER award, a Google Research Scholar, and was recognized as a Forbes' 30 Under 30 Scientist.",
     homepage: "https://guoanhong.com/",
     photo: "/fig/anhongguo.png",
     category: "Co-Principal Investigator"
