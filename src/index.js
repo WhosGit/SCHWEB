@@ -15,15 +15,20 @@ import Home from './pages/Home';
 import Team from './pages/Team';
 import Project from './pages/Project';
 import News from './pages/News';
+import CallForPartners from './pages/CallForPartners';
 
-// 创建Material-UI主题
+// 创建Material-UI主题 - 密歇根大学配色
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#00274C', // 密歇根大学深蓝
+      light: '#154B7A',
+      dark: '#001F3A',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#FFCB05', // 密歇根大学黄色
+      light: '#FFD52D',
+      dark: '#E6B800',
     },
   },
 });
@@ -41,6 +46,7 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/project" element={<Project />} />
             <Route path="/news" element={<News />} />
+            <Route path="/call-for-partners" element={<CallForPartners />} />
           </Routes>
         </main>
         <Footer />

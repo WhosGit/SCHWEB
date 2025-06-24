@@ -2,17 +2,27 @@ import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/materi
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
-  <AppBar position="static" sx={{ backgroundColor: '#1565c0' }}>
+  <AppBar position="sticky" sx={{ backgroundColor: '#00274C', top: 0, zIndex: 1100 }}>
     <Container maxWidth="lg">
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Typography variant="h6" component={Link} to="/" sx={{ 
-          textDecoration: 'none', 
-          color: 'inherit',
-          fontWeight: 'bold',
-          '&:hover': { opacity: 0.8 }
-        }}>
-          SCH
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <img 
+            src="/umich.png" 
+            alt="University of Michigan" 
+            style={{ 
+              height: '81px', 
+              width: 'auto'
+            }}
+          />
+          <Typography variant="h6" component={Link} to="/" sx={{ 
+            textDecoration: 'none', 
+            color: 'inherit',
+            fontWeight: 'bold',
+            '&:hover': { opacity: 0.8 }
+          }}>
+            SCH
+          </Typography>
+        </Box>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <Button color="inherit" component={Link} to="/" sx={{ textTransform: 'none' }}>
             Home
@@ -25,6 +35,22 @@ const Navbar = () => (
           </Button>
           <Button color="inherit" component={Link} to="/news" sx={{ textTransform: 'none' }}>
             Our News
+          </Button>
+          <Button 
+            color="inherit" 
+            component={Link} 
+            to="/call-for-partners" 
+            sx={{ 
+              textTransform: 'none',
+              backgroundColor: '#FFCB05',
+              color: '#00274C',
+              fontWeight: 'bold',
+              '&:hover': {
+                backgroundColor: '#FFD52D'
+              }
+            }}
+          >
+            Join Our Research
           </Button>
         </Box>
       </Toolbar>

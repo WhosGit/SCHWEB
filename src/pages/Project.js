@@ -103,7 +103,8 @@ const Project = () => (
       </Box>
     </Paper>
 
-    {/* Research Thrusts */}
+    {/* Research Thrusts - Currently Hidden */}
+    {/* 
     <Box sx={{ mb: 6 }}>
       <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
         Research Thrusts
@@ -159,6 +160,7 @@ const Project = () => (
         ))}
       </Grid>
     </Box>
+    */}
 
     {/* Publications */}
     <Box sx={{ mb: 6 }}>
