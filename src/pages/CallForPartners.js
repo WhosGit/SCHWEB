@@ -26,19 +26,23 @@ const CallForPartners = () => {
         
         <Box sx={{ my: 4 }}>
           <Typography variant="h6" gutterBottom>
-            Have you ever wanted to capture key moments during an operation for debriefing or teaching?
+            Have you ever wished to capture key moments in surgery for teaching or debriefing?
           </Typography>
           <Typography variant="h6" gutterBottom>
-            Do you want to try using eye-trackers to capture both yours and your resident's gaze during an operation?
+            Would you like to explore the power of eye-tracking technology to analyze both your gaze and your resident's during operations?
           </Typography>
         </Box>
 
-        <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4 }}>
-          We're looking for partners to pilot our AI-powered system that uses eye-tracking technology to record and analyze both your gaze and your resident's during surgery. Our platform identifies critical, learnable moments to support post-operative reflection and teaching.
+        <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 3 }}>
+          We're seeking partners to pilot our AI-powered system that uses dual eye-tracking to record and analyze visual attention in real-time. Our platform automatically identifies critical, learnable moments to support post-operative reflection, feedback, and teaching.
+        </Typography>
+
+        <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4, fontStyle: 'italic' }}>
+          If you perform laparoscopic procedures and train residents, you're an ideal collaborator.
         </Typography>
 
         <Typography variant="h6" sx={{ color: '#00274C', fontWeight: 'bold', mb: 3 }}>
-          Join us in advancing surgical education—enhance your trainees' learning, improve entrustability, and ultimately, support safer patient care.
+          Join us in advancing surgical education—enhance learning, improve entrustability, and promote safer patient care.
         </Typography>
 
         <Box sx={{ textAlign: 'center' }}>
