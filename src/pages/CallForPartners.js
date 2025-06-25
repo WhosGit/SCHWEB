@@ -15,9 +15,7 @@ const CallForPartners = () => {
         <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
           Call for Surgeon Partners
         </Typography>
-        <Typography variant="h5" color="text.secondary" sx={{ maxWidth: '800px', margin: '0 auto', mb: 4 }}>
-          Join us in revolutionizing surgical education through AI-powered eye-tracking technology
-        </Typography>
+
       </Box>
 
       {/* Main Call to Action */}
