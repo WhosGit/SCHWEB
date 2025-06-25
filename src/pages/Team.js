@@ -46,8 +46,24 @@ const teamMembers = [
     title: "Master Student",
     department: "Computer Science and Engineering",
     institution: "University of Michigan",
-    homepage: "#",
+    homepage: "https://www.linkedin.com/in/tristaxu01/",
     photo: "/fig/tristaxu.png"
+  },
+  {
+    name: "Jingjing Zhang",
+    title: "Incoming Master Student",
+    department: "Computer Science and Engineering",
+    institution: "University of Michigan",
+    homepage: "#",
+    photo: "/fig/Jingjing.png"
+  },
+  {
+    name: "Keyuan Hu",
+    title: "Undergraduate Student",
+    department: "Data Science",
+    institution: "University of Michigan",
+    homepage: "https://www.linkedin.com/in/keyuan-hu-363a01327/",
+    photo: "/fig/keyuan.png"
   }
 ];
 
