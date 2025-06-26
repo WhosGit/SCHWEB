@@ -69,9 +69,17 @@ const Project = () => {
   const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
-    <Box sx={{ textAlign: 'center', mb: 6 }}>
-      <Typography variant="h3" component="h1" gutterBottom>
+    <Container maxWidth="lg" sx={{ py: { xs: 3, sm: 4, md: 6 } }}>
+    <Box sx={{ textAlign: 'center', mb: { xs: 4, sm: 5, md: 6 } }}>
+      <Typography 
+        variant={isSmallMobile ? "h4" : isMobile ? "h3" : "h3"} 
+        component="h1" 
+        gutterBottom
+        sx={{
+          fontSize: { xs: '1.75rem', sm: '2.125rem', md: '3rem' },
+          fontWeight: 'bold'
+        }}
+      >
         Our Research
       </Typography>
       {/* <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -81,28 +89,70 @@ const Project = () => {
     </Box>
 
     {/* Project Overview */}
-    <Paper sx={{ p: 4, mb: 6, backgroundColor: '#f8f9fa' }}>
-      <Typography variant="h4" component="h2" gutterBottom color="primary.main">
+    <Paper sx={{ 
+      p: { xs: 2, sm: 3, md: 4 }, 
+      mb: 6, 
+      backgroundColor: '#f8f9fa' 
+    }}>
+      <Typography 
+        variant={isSmallMobile ? "h5" : isMobile ? "h4" : "h4"} 
+        component="h2" 
+        gutterBottom 
+        color="primary.main"
+        sx={{
+          fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
+          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
+          mb: { xs: 2, sm: 2.5, md: 3 }
+        }}
+      >
         {projectOverview.title}
       </Typography>
       
-      <Typography variant="body1" sx={{ lineHeight: 1.7, mb: 3 }}>
+      <Typography 
+        variant={isSmallMobile ? "body2" : "body1"} 
+        sx={{ 
+          lineHeight: { xs: 1.5, sm: 1.6, md: 1.7 }, 
+          mb: { xs: 2, sm: 2.5, md: 3 },
+          fontSize: { xs: '0.875rem', sm: '1rem', md: '1rem' }
+        }}
+      >
         {projectOverview.description}
       </Typography>
 
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
-        <Typography variant="body2" color="text.secondary">
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: { xs: 'column', sm: 'row' },
+        flexWrap: 'wrap', 
+        gap: { xs: 0.5, sm: 1 }, 
+        alignItems: { xs: 'flex-start', sm: 'center' }
+      }}>
+        <Typography 
+          variant="body2" 
+          color="text.secondary"
+          sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }}
+        >
           Supported by: 
         </Typography>
         <Link 
           href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2406218&HistoricalAwards=false"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ textDecoration: 'none', color: 'primary.main' }}
+          sx={{ 
+            textDecoration: 'none', 
+            color: 'primary.main',
+            fontSize: { xs: '0.75rem', sm: '0.875rem' }
+          }}
         >
           {projectOverview.awardNumber}
         </Link>
-        <Typography variant="body2" color="text.secondary">
+        <Typography 
+          variant="body2" 
+          color="text.secondary"
+          sx={{ 
+            fontSize: { xs: '0.75rem', sm: '0.875rem' },
+            mt: { xs: 0.5, sm: 0 }
+          }}
+        >
           • {projectOverview.program} • {projectOverview.duration}
         </Typography>
       </Box>
@@ -169,7 +219,17 @@ const Project = () => {
 
     {/* Publications */}
     <Box sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
+      <Typography 
+        variant={isSmallMobile ? "h5" : isMobile ? "h4" : "h4"} 
+        component="h2" 
+        gutterBottom 
+        sx={{ 
+          mb: { xs: 3, sm: 4 }, 
+          color: 'primary.main',
+          fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+          textAlign: 'center'
+        }}
+      >
         Key Publications
       </Typography>
       <Grid container spacing={4}>
