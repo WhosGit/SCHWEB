@@ -72,7 +72,7 @@ const Banner = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Learn More
+              Sign Up as a Partner
             </Button>
           </Box>
         </Container>

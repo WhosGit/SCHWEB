@@ -1,10 +1,10 @@
 import { Container, Typography, Grid, Box, Link, Paper } from '@mui/material';
 
-const teamMembers = [
+const professors = [
   {
     name: "Xu Wang",
     title: "Assistant Professor",
-    department: "Computer Science and Engineering, School of Information (By courtesy)",
+    department: "Computer Science and Engineering",
     institution: "University of Michigan",
     homepage: "https://web.eecs.umich.edu/~xwanghci/",
     photo: "/fig/xuwang.png"
@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: "Anhong Guo",
     title: "Assistant Professor", 
-    department: "Computer Science and Engineering, School of Information (affiliated)",
+    department: "Computer Science and Engineering",
     institution: "University of Michigan",
     homepage: "https://guoanhong.com/",
     photo: "/fig/anhongguo.png"
@@ -20,10 +20,21 @@ const teamMembers = [
   {
     name: "Vitaliy Popov",
     title: "Assistant Professor",
-    department: "Learning Health Sciences, School of Information (By courtesy)",
+    department: "Learning Health Sciences",
     institution: "University of Michigan",
     homepage: "https://www.vitaliypopov.com/",
     photo: "/fig/VitaliyPopov.png"
+  }
+];
+
+const otherMembers = [
+    {
+    name: "Rosiana Natalie",
+    title: "Postdoctoral Research Fellow",
+    department: "Computer Science and Engineering",
+    institution: "University of Michigan",
+    homepage: "https://www.rosiananatalie.com/",
+    photo: "/fig/rosiananatalie.png"
   },
   {
     name: "Jingying Wang",
@@ -32,14 +43,6 @@ const teamMembers = [
     institution: "University of Michigan",
     homepage: "https://wjymonica.github.io/jingyingwang.github.io/",
     photo: "/fig/jingyingwang.png"
-  },
-  {
-    name: "Rosiana Natalie",
-    title: "Postdoctoral Research Fellow",
-    department: "Computer Science and Engineering",
-    institution: "University of Michigan",
-    homepage: "https://www.rosiananatalie.com/",
-    photo: "/fig/rosiananatalie.png"
   },
   {
     name: "Trista Xu",
@@ -152,20 +155,59 @@ const Team = () => {
         <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
           Our Team
         </Typography>
-        <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '800px', margin: '0 auto' }}>
+        {/* <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '800px', margin: '0 auto' }}>
           Meet the interdisciplinary research team working on computational methods 
           for surgical training and patient outcome improvement.
-        </Typography>
+        </Typography> */}
       </Box>
 
-      {/* All Team Members */}
-      <Grid container spacing={4} justifyContent="center">
-        {teamMembers.map((member, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <PersonCard member={member} />
+      {/* Professors Section */}
+      <Box sx={{ mb: 6 }}>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ 
+          fontWeight: 'bold',
+          textAlign: 'center',
+          mb: 4
+        }}>
+          Faculty
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          {professors.map((member, index) => (
+            <Grid item xs={12} sm={4} md={4} key={index}>
+              <PersonCard member={member} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      {/* Other Team Members */}
+      <Box>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ 
+          fontWeight: 'bold',
+          textAlign: 'center',
+          mb: 4
+        }}>
+          Research Team
+        </Typography>
+        
+        {/* First Row: Rosiana and Jingying */}
+        <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
+          <Grid item xs={12} sm={6} md={4}>
+            <PersonCard member={otherMembers[0]} /> {/* Rosiana */}
           </Grid>
-        ))}
-      </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <PersonCard member={otherMembers[1]} /> {/* Jingying */}
+          </Grid>
+        </Grid>
+        
+        {/* Second Row: Remaining members */}
+        <Grid container spacing={4} justifyContent="center">
+          {otherMembers.slice(2).map((member, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index + 2}>
+              <PersonCard member={member} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 };

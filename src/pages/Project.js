@@ -69,10 +69,10 @@ const Project = () => (
       <Typography variant="h3" component="h1" gutterBottom>
         Our Research
       </Typography>
-      <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '900px', margin: '0 auto' }}>
+      {/* <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '900px', margin: '0 auto' }}>
         Developing computational methods to enhance surgical training 
         and improve patient outcomes through multimodal behavioral analysis.
-      </Typography>
+      </Typography> */}
     </Box>
 
     {/* Project Overview */}
