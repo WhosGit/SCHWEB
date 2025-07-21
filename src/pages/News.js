@@ -1,4 +1,4 @@
-import { Container, Typography, Card, CardContent, Chip, Box, Link, useTheme, useMediaQuery } from '@mui/material';
+import { Container, Typography, Card, CardContent, Chip, Box, Link } from '@mui/material';
 
 const newsItems = [
   {
@@ -35,20 +35,16 @@ const getCategoryColor = (category) => {
 };
 
 const News = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, sm: 4, md: 6 } }}>
       <Box sx={{ textAlign: 'center', mb: { xs: 4, sm: 5, md: 6 } }}>
         <Typography 
-          variant={isSmallMobile ? "h4" : isMobile ? "h3" : "h3"} 
+          variant="h1" 
           component="h1" 
           gutterBottom 
           sx={{ 
             fontWeight: 'bold',
-            fontSize: { xs: '1.75rem', sm: '2.125rem', md: '3rem' }
+            color: 'primary.main'
           }}
         >
           News & Updates
@@ -75,36 +71,31 @@ const News = () => {
               }
             }}
           >
-            <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
+            <CardContent sx={{ p: { xs: 3, sm: 4 } }}>
               <Typography 
-                variant={isSmallMobile ? "h6" : isMobile ? "h5" : "h5"} 
+                variant="h3" 
                 component="h3" 
                 gutterBottom 
                 color="primary.main"
                 sx={{
-                  fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' },
-                  lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                  mb: { xs: 1.5, sm: 2, md: 2 },
+                  mb: { xs: 1.5, sm: 2 },
                   fontWeight: 'bold'
                 }}
               >
                 {item.title}
               </Typography>
               <Typography 
-                variant={isSmallMobile ? "body2" : "body1"} 
+                variant="body1" 
                 color="text.secondary" 
                 paragraph 
                 sx={{ 
-                  lineHeight: { xs: 1.5, sm: 1.6, md: 1.7 },
-                  fontSize: { xs: '0.875rem', sm: '1rem', md: '1rem' },
-                  mb: { xs: 2, sm: 2.5, md: 3 }
+                  mb: { xs: 2, sm: 2.5 }
                 }}
               >
                 {item.content}
               </Typography>
               <Box sx={{ 
                 display: 'flex', 
-                alignItems: 'center', 
                 flexDirection: { xs: 'column', sm: 'row' },
                 gap: { xs: 1, sm: 2 }, 
                 mt: 2,
@@ -113,17 +104,11 @@ const News = () => {
                 <Chip 
                   label={item.category} 
                   color={getCategoryColor(item.category)} 
-                  size={isSmallMobile ? "small" : "small"}
-                  sx={{
-                    fontSize: { xs: '0.7rem', sm: '0.75rem' }
-                  }}
+                  size="small"
                 />
                 <Typography 
                   variant="body2" 
                   color="text.secondary"
-                  sx={{
-                    fontSize: { xs: '0.75rem', sm: '0.875rem' }
-                  }}
                 >
                   {item.date}
                 </Typography>

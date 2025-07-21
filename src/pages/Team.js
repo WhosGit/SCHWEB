@@ -112,13 +112,13 @@ const PersonCard = ({ member }) => (
       }}
     >
       <Typography 
-        variant="h5" 
+        variant="h4" 
         component="h3" 
         gutterBottom
         sx={{ 
           color: 'primary.main',
           fontWeight: 'bold',
-          mb: 1
+          mb: 1.5
         }}
       >
         {member.name}
@@ -126,13 +126,16 @@ const PersonCard = ({ member }) => (
     </Link>
 
     {/* Title and Department */}
-    <Typography variant="body1" color="text.primary" gutterBottom>
+    <Typography variant="h6" color="text.primary" gutterBottom sx={{ fontWeight: 500 }}>
       {member.title}
     </Typography>
-    <Typography variant="body2" color="text.secondary" gutterBottom>
+    <Typography variant="body1" color="text.secondary" gutterBottom>
       {member.department}
     </Typography>
-    <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 'bold', mb: 2 }}>
+    <Typography variant="body1" color="text.secondary" sx={{ 
+      fontWeight: 'bold', 
+      mb: 2 
+    }}>
       {member.institution}
     </Typography>
 
@@ -149,30 +152,38 @@ const PersonCard = ({ member }) => (
 
 const Team = () => {
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 4, sm: 5, md: 6 } }}>
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
-        <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
+      <Box sx={{ textAlign: 'center', mb: { xs: 6, sm: 7, md: 8 } }}>
+        <Typography variant="h1" component="h1" gutterBottom sx={{ 
+          fontWeight: 'bold',
+          color: 'primary.main' 
+        }}>
           Our Team
         </Typography>
-        {/* <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '800px', margin: '0 auto' }}>
-          Meet the interdisciplinary research team working on computational methods 
+        <Typography variant="body1" color="text.secondary" sx={{ 
+          maxWidth: '600px', 
+          margin: '0 auto',
+          mt: 2
+        }}>
+          Meet our interdisciplinary research team working on computational methods 
           for surgical training and patient outcome improvement.
-        </Typography> */}
+        </Typography>
       </Box>
 
       {/* Professors Section */}
-      <Box sx={{ mb: 6 }}>
-        <Typography variant="h4" component="h2" gutterBottom sx={{ 
+      <Box sx={{ mb: { xs: 6, sm: 7, md: 8 } }}>
+        <Typography variant="h2" component="h2" gutterBottom sx={{ 
           fontWeight: 'bold',
           textAlign: 'center',
-          mb: 4
+          mb: { xs: 4, sm: 5 },
+          color: 'primary.main'
         }}>
           Faculty
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={{ xs: 3, sm: 4 }} justifyContent="center">
           {professors.map((member, index) => (
-            <Grid item xs={12} sm={4} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <PersonCard member={member} />
             </Grid>
           ))}
@@ -181,16 +192,17 @@ const Team = () => {
 
       {/* Other Team Members */}
       <Box>
-        <Typography variant="h4" component="h2" gutterBottom sx={{ 
+        <Typography variant="h2" component="h2" gutterBottom sx={{ 
           fontWeight: 'bold',
           textAlign: 'center',
-          mb: 4
+          mb: { xs: 4, sm: 5 },
+          color: 'primary.main'
         }}>
           Research Team
         </Typography>
         
         {/* First Row: Rosiana and Jingying */}
-        <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
+        <Grid container spacing={{ xs: 3, sm: 4 }} justifyContent="center" sx={{ mb: { xs: 4, sm: 5 } }}>
           <Grid item xs={12} sm={6} md={4}>
             <PersonCard member={otherMembers[0]} /> {/* Rosiana */}
           </Grid>
@@ -200,7 +212,7 @@ const Team = () => {
         </Grid>
         
         {/* Second Row: Remaining members */}
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={{ xs: 3, sm: 4 }} justifyContent="center">
           {otherMembers.slice(2).map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index + 2}>
               <PersonCard member={member} />

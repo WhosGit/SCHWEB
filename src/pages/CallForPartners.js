@@ -3,17 +3,10 @@ import {
   Typography, 
   Box, 
   Paper, 
-  Button,
-  useTheme,
-  useMediaQuery
+  Button
 } from '@mui/material';
-// 删除了不再需要的图标导入
 
 const CallForPartners = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   return (
     <Container 
       maxWidth="lg" 
@@ -25,14 +18,13 @@ const CallForPartners = () => {
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: { xs: 4, sm: 5, md: 6 } }}>
         <Typography 
-          variant={isSmallMobile ? "h4" : isMobile ? "h3" : "h2"} 
+          variant="h1" 
           component="h1" 
           gutterBottom 
           sx={{ 
             fontWeight: 'bold', 
             color: 'primary.main',
-            px: { xs: 1, sm: 2 },
-            lineHeight: { xs: 1.2, sm: 1.3, md: 1.4 }
+            px: { xs: 1, sm: 2 }
           }}
         >
           Call for Surgeon Partners
@@ -51,14 +43,13 @@ const CallForPartners = () => {
         }}
       >
         <Typography 
-          variant={isSmallMobile ? "h5" : isMobile ? "h4" : "h4"} 
+          variant="h3" 
           component="h2" 
           gutterBottom 
           sx={{ 
             color: '#00274C', 
             fontWeight: 'bold',
-            lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-            fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' }
+            mb: { xs: 2.5, sm: 3 }
           }}
         >
           Are you a surgical educator who regularly performs laparoscopic cholecystectomies?
@@ -66,44 +57,56 @@ const CallForPartners = () => {
         
         <Box sx={{ my: { xs: 3, sm: 4 } }}>
           <Typography 
-            variant="h6" 
+            variant="h5" 
             gutterBottom
             sx={{
-              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
-              lineHeight: { xs: 1.4, sm: 1.5 },
-              mb: { xs: 2, sm: 2.5 }
+              mb: { xs: 2, sm: 2.5 },
+              color: 'text.primary'
             }}
           >
-            Have you ever wished to capture key moments in surgery for teaching or debriefing?
+            Have you ever wanted to capture key teaching moments during surgery—not just to complete the procedure, but to preserve what you taught and share it with future learners?
           </Typography>
           <Typography 
-            variant="h6" 
+            variant="h5" 
             gutterBottom
             sx={{
-              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
-              lineHeight: { xs: 1.4, sm: 1.5 }
+              color: 'text.primary'
             }}
           >
-            Would you like to explore the power of eye-tracking technology to analyze both your gaze and your resident's during operations?
+            Would you like to explore eye-tracking technology to analyze your gaze and your resident's in real time?
           </Typography>
+        </Box>
+
+        {/* Image section */}
+        <Box sx={{ 
+          textAlign: 'center', 
+          my: { xs: 4, sm: 5, md: 6 },
+          p: { xs: 2, sm: 3 }
+        }}>
+          <img 
+            src="/exampledashboard.jpg"
+            alt="Surgical training eye-tracking technology"
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+              borderRadius: '12px',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+            }}
+          />
         </Box>
 
         <Typography 
           variant="body1" 
           sx={{ 
-            fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' }, 
-            lineHeight: { xs: 1.6, sm: 1.7, md: 1.8 }, 
             mb: { xs: 2.5, sm: 3 }
           }}
         >
-          We're seeking partners to pilot our AI-powered system that uses dual eye-tracking to record and analyze visual attention in real-time. Our platform automatically identifies critical, learnable moments to support post-operative reflection, feedback, and teaching.
+          We're seeking partners to pilot an AI-powered system that uses dual eye-tracking to automatically identify critical, teachable moments, supporting post-operative reflection, feedback, and education.
         </Typography>
 
         <Typography 
           variant="body1" 
           sx={{ 
-            fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' }, 
-            lineHeight: { xs: 1.6, sm: 1.7, md: 1.8 }, 
             mb: { xs: 3, sm: 4 }, 
             fontStyle: 'italic',
             px: { xs: 1, sm: 2 }
@@ -113,13 +116,11 @@ const CallForPartners = () => {
         </Typography>
 
         <Typography 
-          variant="h6" 
+          variant="h4" 
           sx={{ 
             color: '#00274C', 
             fontWeight: 'bold', 
             mb: { xs: 2.5, sm: 3 },
-            fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
-            lineHeight: { xs: 1.4, sm: 1.5 },
             textAlign: { xs: 'center', sm: 'left' }
           }}
         >
@@ -129,11 +130,10 @@ const CallForPartners = () => {
         <Box sx={{ textAlign: 'center', mt: { xs: 3, sm: 4 } }}>
           <Button 
             variant="contained" 
-            size={isMobile ? "medium" : "large"}
+            size="large"
             sx={{ 
-              px: { xs: 3, sm: 4 }, 
+              px: { xs: 4, sm: 5 }, 
               py: { xs: 1.5, sm: 2 }, 
-              fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' },
               backgroundColor: '#FFCB05',
               color: '#00274C',
               fontWeight: 'bold',

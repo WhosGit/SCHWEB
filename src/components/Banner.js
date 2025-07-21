@@ -1,12 +1,6 @@
-import { Box, Typography, Container, Alert, Button, useTheme, useMediaQuery } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Box, Typography, Container, Alert, Button } from '@mui/material';
 
 const Banner = () => {
-  const navigate = useNavigate();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   return (
     <>
       {/* Call for Partners Alert */}
@@ -30,17 +24,17 @@ const Banner = () => {
             alignItems: 'center', 
             justifyContent: 'space-between', 
             flexWrap: 'wrap', 
-            gap: { xs: 2, sm: 1.5 },
+            gap: { xs: 1.5, sm: 1 },
             flexDirection: { xs: 'column', sm: 'row' },
             textAlign: { xs: 'center', sm: 'left' }
           }}>
             <Box sx={{ flex: 1 }}>
               <Typography 
-                variant="body1" 
+                variant="h6" 
                 sx={{ 
                   fontWeight: 'bold', 
                   mb: 0.5,
-                  fontSize: { xs: '0.9rem', sm: '1rem' }
+                  color: 'white'
                 }}
               >
                 🔬 Calling All Surgical Educators!
@@ -48,8 +42,8 @@ const Banner = () => {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  fontSize: { xs: '0.8rem', sm: '0.9rem' },
-                  lineHeight: { xs: 1.4, sm: 1.5 }
+                  color: 'white',
+                  opacity: 0.95
                 }}
               >
                 Join our pioneering research using AI-powered eye-tracking technology to enhance surgical training.
@@ -57,13 +51,14 @@ const Banner = () => {
             </Box>
             <Button 
               variant="contained"
-              size={isSmallMobile ? "small" : "medium"}
+              size="medium"
               sx={{ 
                 backgroundColor: '#FFCB05', 
                 color: '#00274C',
                 fontWeight: 'bold',
-                fontSize: { xs: '0.8rem', sm: '0.875rem' },
-                px: { xs: 2, sm: 3 },
+                px: { xs: 2.5, sm: 3.5 },
+                py: { xs: 1, sm: 1.5 },
+                minWidth: { xs: '160px', sm: 'auto' },
                 '&:hover': {
                   backgroundColor: '#FFD52D'
                 }
@@ -94,39 +89,39 @@ const Banner = () => {
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', color: 'white' }}>
             <Typography 
-              variant={isSmallMobile ? "h4" : isMobile ? "h3" : "h2"} 
+              variant="h1" 
               component="h1" 
               fontWeight="bold" 
-              mb={{ xs: 2, sm: 3 }}
+              mb={2}
               sx={{
-                fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3.75rem' },
-                lineHeight: { xs: 1.2, sm: 1.3, md: 1.4 }
+                color: 'white',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
               }}
             >
               Multimodal Surgical Training Research
             </Typography>
             <Typography 
-              variant={isSmallMobile ? "h6" : isMobile ? "h5" : "h5"} 
+              variant="h3" 
               component="h2" 
-              mb={{ xs: 3, sm: 4 }} 
+              mb={3} 
               sx={{ 
-                opacity: 0.9,
-                fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' },
-                lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
+                opacity: 0.95,
+                color: 'white',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
                 px: { xs: 1, sm: 2 }
               }}
             >
               Enhancing Intra- and Post-operative Learning Between Attending and Resident Surgeons
             </Typography>
             <Typography 
-              variant="h6" 
+              variant="body1" 
               component="p" 
               sx={{ 
-                maxWidth: { xs: '100%', sm: '800px', md: '900px' }, 
+                maxWidth: { xs: '100%', sm: '700px', md: '800px' }, 
                 margin: '0 auto', 
-                opacity: 0.8,
-                fontSize: { xs: '0.95rem', sm: '1.1rem', md: '1.25rem' },
-                lineHeight: { xs: 1.4, sm: 1.5, md: 1.6 },
+                opacity: 0.9,
+                color: 'white',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
                 px: { xs: 1, sm: 2 }
               }}
             >

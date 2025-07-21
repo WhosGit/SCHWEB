@@ -9,60 +9,6 @@ const projectOverview = {
   description: "The overarching goal of this project is to improve surgical training experiences and outcomes in the operating room by computationally modeling attending and resident surgeons' intraoperative behaviors. By modeling surgeons' individual and interpersonal behaviors, we aim to enable automated inference and formative assessment of resident surgeons' technical competence, attending surgeons' instruction quality, and the degree to which residents gain operational independence."
 };
 
-const researchThrusts = [
-  {
-    thrust: "Thrust 1",
-    title: "Multimodal Data Collection and Curation",
-    description: "Collecting and curating a comprehensive dataset of up to 100 laparoscopic cholecystectomy surgeries with three streams of multimodal data.",
-    components: [
-      "Surgeons' gaze tracking during procedures",
-      "Operating room conversations and communication patterns", 
-      "Laparoscopic camera video feed analysis",
-      "Behavioral annotation and data preprocessing"
-    ],
-    outcomes: ["Comprehensive surgical behavior dataset", "Standardized data collection protocols", "Multimodal data integration framework"]
-  },
-  {
-    thrust: "Thrust 2", 
-    title: "Multimodal Behavioral Modeling",
-    description: "Developing and evaluating computational approaches to predict surgeons' intraoperative behaviors using advanced machine learning techniques.",
-    components: [
-      "Scene segmentation pipeline for surgery interpretation",
-      "Semantic gaze analysis (e.g., 'resident looking at gallbladder')",
-      "Multimodal neural network architecture",
-      "Technical procedure prediction models",
-      "Communication and coordination behavior analysis"
-    ],
-    outcomes: ["Automated surgeon behavior prediction", "Technical competence assessment", "Real-time coordination analysis"]
-  },
-  {
-    thrust: "Thrust 3",
-    title: "Post-operative Debriefing Dashboard",
-    description: "Creating interactive systems for surgeons to review critical moments and receive instructional feedback after procedures.",
-    components: [
-      "Co-design process with attending and resident surgeons",
-      "Interactive visualization of surgery moments",
-      "Critical event highlighting and annotation",
-      "Performance feedback integration",
-      "Controlled experimental evaluation"
-    ],
-    outcomes: ["Enhanced post-operative learning", "Improved feedback mechanisms", "Evidence-based training improvements"]
-  },
-  {
-    thrust: "Thrust 4",
-    title: "Augmented Reality Intraoperative Visualizations", 
-    description: "Developing and evaluating AR-based real-time visualizations to enhance coordination and instruction during surgery.",
-    components: [
-      "Real-time AR overlay development",
-      "Intraoperative guidance systems",
-      "Enhanced coordination visualizations",
-      "Instruction quality enhancement tools",
-      "Clinical validation and testing"
-    ],
-    outcomes: ["Real-time surgical guidance", "Enhanced coordination", "Improved instruction delivery"]
-  }
-];
-
 const Project = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -72,48 +18,48 @@ const Project = () => {
     <Container maxWidth="lg" sx={{ py: { xs: 3, sm: 4, md: 6 } }}>
     <Box sx={{ textAlign: 'center', mb: { xs: 4, sm: 5, md: 6 } }}>
       <Typography 
-        variant={isSmallMobile ? "h4" : isMobile ? "h3" : "h3"} 
+        variant="h1" 
         component="h1" 
         gutterBottom
         sx={{
-          fontSize: { xs: '1.75rem', sm: '2.125rem', md: '3rem' },
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          color: 'primary.main'
         }}
       >
         Our Research
       </Typography>
-      {/* <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '900px', margin: '0 auto' }}>
+      <Typography variant="body1" color="text.secondary" sx={{ 
+        maxWidth: '700px', 
+        margin: '0 auto',
+        mt: 2
+      }}>
         Developing computational methods to enhance surgical training 
         and improve patient outcomes through multimodal behavioral analysis.
-      </Typography> */}
+      </Typography>
     </Box>
 
     {/* Project Overview */}
     <Paper sx={{ 
-      p: { xs: 2, sm: 3, md: 4 }, 
-      mb: 6, 
+      p: { xs: 3, sm: 4, md: 5 }, 
+      mb: { xs: 5, sm: 6 }, 
       backgroundColor: '#f8f9fa' 
     }}>
       <Typography 
-        variant={isSmallMobile ? "h5" : isMobile ? "h4" : "h4"} 
+        variant="h2" 
         component="h2" 
         gutterBottom 
         color="primary.main"
         sx={{
-          fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
-          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-          mb: { xs: 2, sm: 2.5, md: 3 }
+          mb: { xs: 2, sm: 3 }
         }}
       >
         {projectOverview.title}
       </Typography>
       
       <Typography 
-        variant={isSmallMobile ? "body2" : "body1"} 
+        variant="body1" 
         sx={{ 
-          lineHeight: { xs: 1.5, sm: 1.6, md: 1.7 }, 
-          mb: { xs: 2, sm: 2.5, md: 3 },
-          fontSize: { xs: '0.875rem', sm: '1rem', md: '1rem' }
+          mb: { xs: 2.5, sm: 3 }
         }}
       >
         {projectOverview.description}
@@ -129,7 +75,6 @@ const Project = () => {
         <Typography 
           variant="body2" 
           color="text.secondary"
-          sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }}
         >
           Supported by: 
         </Typography>
@@ -139,8 +84,7 @@ const Project = () => {
           rel="noopener noreferrer"
           sx={{ 
             textDecoration: 'none', 
-            color: 'primary.main',
-            fontSize: { xs: '0.75rem', sm: '0.875rem' }
+            color: 'primary.main'
           }}
         >
           {projectOverview.awardNumber}
@@ -149,7 +93,6 @@ const Project = () => {
           variant="body2" 
           color="text.secondary"
           sx={{ 
-            fontSize: { xs: '0.75rem', sm: '0.875rem' },
             mt: { xs: 0.5, sm: 0 }
           }}
         >
