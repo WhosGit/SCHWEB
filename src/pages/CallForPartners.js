@@ -3,10 +3,25 @@ import {
   Typography, 
   Box, 
   Paper, 
-  Button
+  Button,
+  Dialog,
+  DialogContent,
+  IconButton
 } from '@mui/material';
+import { useState } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
 
 const CallForPartners = () => {
+  const [imageDialogOpen, setImageDialogOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setImageDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setImageDialogOpen(false);
+  };
+
   return (
     <Container 
       maxWidth="lg" 
@@ -83,17 +98,118 @@ const CallForPartners = () => {
           my: { xs: 4, sm: 5, md: 6 },
           p: { xs: 2, sm: 3 }
         }}>
-          <img 
-            src="/exampledashboard.jpg"
-            alt="Surgical training eye-tracking technology"
-            style={{
-              maxWidth: '100%',
-              height: 'auto',
-              borderRadius: '12px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+          <Box
+            sx={{
+              position: 'relative',
+              display: 'inline-block',
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease-in-out',
+              '&:hover': {
+                transform: 'scale(1.02)'
+              }
             }}
-          />
+            onClick={handleImageClick}
+          >
+            <img 
+              src="/exampledashboard.jpg"
+              alt="Surgical training eye-tracking technology"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                borderRadius: '12px',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+              }}
+            />
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+                backgroundColor: 'rgba(0,0,0,0.6)',
+                color: 'white',
+                borderRadius: '50%',
+                width: 32,
+                height: 32,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '14px',
+                opacity: { xs: 1, sm: 0 },
+                transition: 'opacity 0.2s',
+                '.parent:hover &': {
+                  opacity: 1
+                }
+              }}
+            >
+              🔍
+            </Box>
+          </Box>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              mt: 1,
+              fontStyle: 'italic',
+              fontSize: { xs: '0.75rem', sm: '0.875rem' }
+            }}
+          >
+            Click to view full size
+          </Typography>
         </Box>
+
+        {/* Full-screen Image Dialog */}
+        <Dialog
+          open={imageDialogOpen}
+          onClose={handleCloseDialog}
+          maxWidth={false}
+          fullWidth
+          sx={{
+            '& .MuiDialog-paper': {
+              margin: { xs: 1, sm: 2 },
+              maxHeight: '95vh',
+              backgroundColor: 'rgba(0,0,0,0.9)'
+            }
+          }}
+        >
+          <DialogContent
+            sx={{
+              p: 0,
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'transparent'
+            }}
+          >
+            <IconButton
+              onClick={handleCloseDialog}
+              sx={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                color: '#000',
+                zIndex: 1,
+                '&:hover': {
+                  backgroundColor: 'rgba(255,255,255,1)'
+                }
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            <img
+              src="/exampledashboard.jpg"
+              alt="Surgical training eye-tracking technology - Full size"
+              style={{
+                maxWidth: '100%',
+                maxHeight: '90vh',
+                objectFit: 'contain',
+                borderRadius: '8px'
+              }}
+              onClick={handleCloseDialog}
+            />
+          </DialogContent>
+        </Dialog>
 
         <Typography 
           variant="body1" 
